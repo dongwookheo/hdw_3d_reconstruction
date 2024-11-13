@@ -14,6 +14,8 @@
 ## Results
 ### 1. 2D point visualization on two images
 ![matching_result](/resource/matching_result.png)
+
+<a name="inlier_after_ransac"></a>
 ![inlier_after_ransac](/resource/inlier_after_ransac.png)
 ### 2. The essential matrix *E* between two images
 ![e_result](/resource/e_result.png)
@@ -25,9 +27,9 @@
 
 ## Discussion
 - Brute-force matching 없이, 최대한 많은 매칭 결과를 활용하여 `RANSAC`을 적용하려고 했을 때 잘 되지 않았습니다.
-  - `SIFT`를 통해 뽑은 keypoints가 5957쌍인데, [inlier after RANSAC](#inlier_after_ransac) 결과에서 볼 수 있듯이 inlier의 수가 현저히 적습니다 (153쌍).
+  - `SIFT`를 통해 뽑은 keypoints가 5957쌍인데, [inlier after RANSAC](#/resource/inlier_after_ransac.png) 결과에서 볼 수 있듯이 inlier의 수가 현저히 적습니다 (153쌍).
   - 따라서, `RANSAC`이 잘 동작하지 않았습니다. (최소 20~30% 이상인 경우 동작)
 
 ## Todo
 - [ ] Feature matching 방법 바꿔보기 (RoMa, XFeat, ...)
-- [ ] reprojection error를 최소화하는 과정까지 진행해보기
+- [ ] Reprojection error를 최소화하는 과정까지 진행해보기
